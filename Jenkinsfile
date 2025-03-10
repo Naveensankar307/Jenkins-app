@@ -14,8 +14,8 @@ pipeline {
                     ls -la
                     node --version
                     npm --version
-                    npm ci
-                    npm run build
+                    npm ci    /* to install dependicies */
+                    npm run build /* to Build the application folder */
                     ls -la
                 '''
             }
@@ -31,7 +31,7 @@ pipeline {
             steps{
                 sh ''' 
                     test -f build/index.html
-                    npm test
+                    npm test /* to test the js files */
                 '''
             }
         }
